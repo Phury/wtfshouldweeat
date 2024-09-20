@@ -1,6 +1,6 @@
 {
   "name": "wtfshouldweeat",
-  "version": "0.0.0",
+  "version": "1.0.x",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
