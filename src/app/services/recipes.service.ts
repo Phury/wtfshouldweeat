@@ -22,7 +22,7 @@ export class RecipesService {
   public recipes$: Observable<Recipe[]>;
 
   constructor(private csvRepository: CsvRepository) {
-    this.recipes$ = this.csvRepository.loadRecipesFromCSV<Recipe>('/assets/data/recipes.csv').pipe(
+    this.recipes$ = this.csvRepository.loadRecipesFromCSV<Recipe>(`${document.baseURI}assets/data/recipes.csv`).pipe(
       map(resp => resp.filter(elt => elt.ingredients)) // filter out empty recipes
     );
   }

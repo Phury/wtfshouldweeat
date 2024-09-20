@@ -22,7 +22,7 @@ export class RestaurantService {
   public restaurants$: Observable<Restaurant[]>;
 
   constructor(private csvRepository: CsvRepository) {
-    this.restaurants$ = this.csvRepository.loadRecipesFromCSV<Restaurant>('/assets/data/restaurants.csv').pipe(
+    this.restaurants$ = this.csvRepository.loadRecipesFromCSV<Restaurant>(`${document.baseURI}assets/data/restaurants.csv`).pipe(
       map(resp => resp.filter(elt => elt.location)) // filter out empty recipes
     );
   }
